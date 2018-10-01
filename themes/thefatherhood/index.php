@@ -5,7 +5,6 @@
 
 get_header(); ?>
 
-<!-- Content area -->
 
-<?php get_sidebar(); ?>
+<?php //get_sidebar(); ?>
 <?php get_footer(); ?>
