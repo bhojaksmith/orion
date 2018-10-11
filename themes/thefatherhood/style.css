@@ -33,6 +33,14 @@ h1,h2,h3,h4,h5,h6 {
 	text-transform: uppercase;
 	font-family: 'Jura', sans-serif;
 }
+
+.main,
+.logo-container,
+.logotype {
+    width: min(100vw, 1200px);
+    box-sizing: border-box;
+}
+
 /*
 
 	HOMEPAGE
@@ -55,18 +63,15 @@ body.home {
 	margin-top: calc(100vh - 170px);
 	background-color: rgba(0,0,0,1);
 }
-.header-inner {
-	width: 1030px;
-	margin: 0 auto;
-}
 .logo-container {
 	position: -webkit-sticky;
     position: sticky;
+	margin: -187px 0 0;
     top: 10px;
 	z-index: 1000;
 	float: left;
-	padding-left: calc(50% - 580px);
-	margin-top: -187px;
+	padding-left: max(20px, calc(50% - 580px));
+
 }
 .admin-bar .logo-container {
     top: 42px;
@@ -78,21 +83,24 @@ body.home {
 	height: 155px;
 	background-image: url('images/logo-150-sprite.png');
 	background-position: 0px 0px;
+    background-repeat: no-repeat;
+    background-size: auto;
+
 }
 .logo-image:hover {
 	background-position: -150px 0px;
 }
-.header {
+.logotype {
 	display: block;
 	position: relative;
 	top: 10px; /* -197px; */
-	left: 104px;
-	padding: 0;
 	font-size: 80px;
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: 700;
 	letter-spacing: 5px;
+	padding-left: max(190px, calc(50% - 430px));
+    padding-right: 20px;
 }
 .arrow {
 	font-size: 40px;
@@ -182,7 +190,6 @@ body.home {
     background-position-x: center;
 }
 .main {
-	width: 1200px;
 	margin: 0 auto;
 	padding: 80px 190px;
 	padding-top: 60px;
@@ -362,4 +369,53 @@ form input, form select, form textarea {
 	margin: 0 auto;
 	padding: 30px;
 	color: #fff;
+}
+
+
+@media only screen and (max-width: 1180px) {
+	.logotype {
+		font-size: 60px;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+
+}
+
+@media only screen and (max-width: 920px) {
+    .logo-image {
+        zoom: 0.9;
+    }
+    .logotype {
+        font-size: 47px;
+    }
+
+}
+
+@media only screen and (max-width: 690px) {
+
+}
+
+@media only screen and (max-width: 600px) {
+
+
+}
+
+@media only screen and (max-width: 415px) {
+    .logo-image {
+        zoom: 0.9;
+    }
+    .logotype {
+        font-size: 24px;
+    	padding-left: max(170px, calc(50% - 430px));
+    }
+    .arrow { display: none; }
+    .main {
+        padding: 30px;
+    }
+
+}
+
+@media only screen and (max-width: 320px) {
+
 }
