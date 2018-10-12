@@ -36,7 +36,8 @@ h1,h2,h3,h4,h5,h6 {
 
 .main,
 .logo-container,
-.logotype {
+.logotype,
+.footer {
     width: min(100vw, 1200px);
     box-sizing: border-box;
 }
@@ -68,6 +69,7 @@ body.home {
     position: sticky;
 	margin: -187px 0 0;
     top: 10px;
+    width: auto;
 	z-index: 1000;
 	float: left;
 	padding-left: max(20px, calc(50% - 580px));
@@ -101,6 +103,7 @@ body.home {
 	letter-spacing: 5px;
 	padding-left: max(190px, calc(50% - 430px));
     padding-right: 20px;
+    width: 100%;
 }
 .arrow {
 	font-size: 40px;
@@ -119,7 +122,6 @@ body.home {
 	position: -webkit-sticky;
     position: sticky;
     top: 0;
-	padding: 10px;
     z-index: 100;
 }
 
@@ -128,6 +130,8 @@ body.home {
 }
 
 .navbar {
+	background-color: #235580;
+    padding: 10px;
 	text-transform: uppercase;
 	width: 1200px;
 	margin: 0 auto;
@@ -176,6 +180,15 @@ body.home {
 .interest:hover {
 	background-color: #2ab332!important;
 }
+
+/* Hide menu toggle checkboxes */
+input.menu-toggle {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 /*
 
 	MAIN LAYOUT
@@ -191,10 +204,8 @@ body.home {
 }
 .main {
 	margin: 0 auto;
-	padding: 80px 190px;
-	padding-top: 60px;
+	padding: 60px 190px;
 	background-color: rgba(255,255,255,0.8);
-	box-sizing: border-box;
 	line-height: 34px;
     min-height: 100vh;
 }
@@ -365,7 +376,6 @@ form input, form select, form textarea {
 	background-color: #333;
 }
 .footer {
-	width: 1140px;
 	margin: 0 auto;
 	padding: 30px;
 	color: #fff;
@@ -388,6 +398,56 @@ form input, form select, form textarea {
     }
     .logotype {
         font-size: 47px;
+    }
+
+    .label-toggle {
+        display: inline-block;
+        height: 36px;
+        width: 36px;
+        background: url('images/menu.svg') no-repeat 50%;
+        cursor: pointer;
+        margin-right: 30px;
+    }
+
+    .navbar {
+        width: 100vw;
+        padding: 0;
+    }
+    .navbar .menu {
+        display: none;
+        margin-top: 1px;
+        text-align: left;
+        overflow: hidden;
+
+        background-color: rgba(35, 85, 128, 0.9);
+
+        height: 100vh;
+        position: absolute;
+        width: 100vw;
+        padding: 30px;
+        box-sizing: border-box;
+        text-align: left;
+        top: 30px;
+
+    }
+    .navbar .menu-site-navigation-container {
+        text-align: right;
+    }
+    .navbar .menu-toggle:checked ~ ul {
+        display: block;
+        opacity: 1;
+    }
+
+
+    .navbar .menu-item {
+        padding-bottom: 30px;
+        display: block;
+    }
+
+    .navbar .menu-item a {
+        width: 50vw;
+        display: block;
+        margin: 0 auto;
     }
 
 }
@@ -413,7 +473,6 @@ form input, form select, form textarea {
     .main {
         padding: 30px;
     }
-
 }
 
 @media only screen and (max-width: 320px) {

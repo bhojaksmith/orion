@@ -10,8 +10,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" media="all">
-<link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/fonts/jura.css" media="all">
+<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/fonts/roboto.css" media="all">
+<!-- <link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet"> -->
 <?php wp_head(); ?>
 </head>
 
@@ -25,7 +27,7 @@ if ( is_front_page() )
 
 	<?php get_template_part( 'header/logo', 'image' ); ?>
     <div class="navbar-container">
-        <nav class="navbar" id="site-nav" aria-label="Site Menu"><?php wp_nav_menu( array('theme_location'  => 'site-nav') ); ?></nav>
+        <nav class="navbar" id="site-nav" aria-label="Site Menu"><?php wp_nav_menu( array('theme_location' => 'site-nav', 'items_wrap'      => '<input type="checkbox" id="%1$s-toggle" class="menu-toggle" /><label for="%1$s-toggle" class="label-toggle main-menu" data-open="Main Menu" data-close="Close Menu"></label><ul id="%1$s" class="%2$s" role="menubar">%3$s</ul>') ); ?></nav>
     </div>
 
 	<div id="content" class="main site-content">
